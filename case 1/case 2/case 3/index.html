@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Eligibility Checker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00509d;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eef5ff;
+            border-radius: 5px;
+        }
+
+        .eligible {
+            color: green;
+            font-weight: bold;
+        }
+
+        .not-eligible {
+            color: red;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Malla Reddy University</h1>
+        <p>Student Attendance & Exam Eligibility Checker</p>
+    </header>
+
+    <div class="container">
+
+        <h2>Check Exam Eligibility</h2>
+
+        <label for="name">Student Name:</label>
+        <input type="text" id="name"
+        placeholder="Enter student name">
+
+        <label for="roll">Roll Number:</label>
+        <input type="text" id="roll"
+        placeholder="Enter roll number">
+
+        <label for="attendance">Attendance Percentage:</label>
+        <input type="number" id="attendance"
+        placeholder="Enter attendance percentage"
+        min="0" max="100">
+
+        <label for="marks">Academic Performance (Marks):</label>
+        <input type="number" id="marks"
+        placeholder="Enter marks"
+        min="0" max="100">
+
+        <label for="exam">Select Examination:</label>
+        <select id="exam">
+            <option value="">Select Exam</option>
+            <option value="Minor-1">Minor-1</option>
+            <option value="Minor-2">Minor-2</option>
+            <option value="End-Term">End-Term</option>
+        </select>
+
+        <button onclick="checkEligibility()">
+            Check Eligibility
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Malla Reddy University</p>
+    </footer>
+
+    <script>
+
+        function checkEligibility() {
+
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+
+            let attendance = Number(
+                document.getElementById("attendance").value
+            );
+
+            let marks = Number(
+                document.getElementById("marks").value
+            );
+
+            let exam = document.getElementById("exam").value;
+
+            let result = document.getElementById("result");
+
+            // Input validation
+            if (name === "" || roll === "" ||
+                document.getElementById("attendance").value === "" ||
+                document.getElementById("marks").value === "" ||
+                exam === "") {
+
+                result.innerHTML =
+                    "<p class='not-eligible'>Please fill all fields.</p>";
+
+                return;
+            }
+
+            if (attendance < 0 || attendance > 100 ||
+                marks < 0 || marks > 100) {
+
+                result.innerHTML =
+                    "<p class='not-eligible'>Enter valid values between 0 and 100.</p>";
+
+                return;
+            }
+
+            // Eligibility checking
+            let eligible = attendance >= 75 && marks >= 40;
+
+            let status = eligible
+                ? "Eligible"
+                : "Not Eligible";
+
+            let statusClass = eligible
+                ? "eligible"
+                : "not-eligible";
+
+            result.innerHTML =
+                "<h3>Student Details</h3>" +
+                "<p>Name: " + name + "</p>" +
+                "<p>Roll Number: " + roll + "</p>" +
+                "<p>Attendance: " + attendance + "%</p>" +
+                "<p>Marks: " + marks + "</p>" +
+                "<p>Examination: " + exam + "</p>" +
+                "<p class='" + statusClass + "'>" +
+                "Eligibility Status: " + status +
+                "</p>";
+
+        }
+
+    </script>
+
+</body>
+</html>
