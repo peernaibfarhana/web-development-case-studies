@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #003366;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .welcome {
+            background: linear-gradient(120deg, #003366, #0077b6);
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: #003366;
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: #003366;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                MRU Student Dashboard
+            </a>
+
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#attendance">Attendance</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timetable">Timetable</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#notifications">Notifications</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome" id="home">
+
+            <h2>Welcome, Farhana!</h2>
+
+            <p>
+                Welcome to Malla Reddy University Student Dashboard.
+                Manage your academic activities in one place.
+            </p>
+
+            <button class="btn btn-light"
+            data-bs-toggle="modal"
+            data-bs-target="#profileModal">
+                View Profile
+            </button>
+
+        </section>
+
+        <!-- Profile Modal -->
+        <div class="modal fade" id="profileModal" tabindex="-1">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Student Profile</h5>
+
+                        <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p><b>Name:</b> Farhana</p>
+                        <p><b>Roll Number:</b> 2611CS040053</p>
+                        <p><b>Branch:</b> Cybersecurity</p>
+                        <p><b>Section:</b> Alpha</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="alert alert-info mt-4">
+            <b>Important Notice:</b>
+            Check your examination schedule and academic updates regularly.
+        </div>
+
+        <!-- Dashboard Cards -->
+        <h3 class="section-title">Academic Overview</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Attendance</h5>
+                        <h2 class="text-success">85%</h2>
+                        <p>Overall Attendance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Timetable</h5>
+                        <h2>6</h2>
+                        <p>Classes Today</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Examinations</h5>
+                        <h2 class="text-primary">Upcoming</h2>
+                        <p>Check Examination Schedule</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Attendance Section -->
+        <section id="attendance">
+
+            <h3 class="section-title">Attendance Details</h3>
+
+            <div class="card p-3">
+
+                <table class="table table-bordered text-center">
+
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Subject</th>
+                            <th>Attendance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Python</td>
+                            <td>90%</td>
+                            <td class="text-success">Good</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>85%</td>
+                            <td class="text-success">Good</td>
+                        </tr>
+
+                        <tr>
+                            <td>Physics</td>
+                            <td>80%</td>
+                            <td class="text-success">Good</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Timetable Section -->
+        <section id="timetable">
+
+            <h3 class="section-title">Class Timetable</h3>
+
+            <div class="card p-3">
+
+                <table class="table table-striped text-center">
+
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Time</th>
+                            <th>Subject</th>
+                            <th>Room</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>9:00 AM</td>
+                            <td>Python</td>
+                            <td>101</td>
+                        </tr>
+
+                        <tr>
+                            <td>10:00 AM</td>
+                            <td>Mathematics</td>
+                            <td>102</td>
+                        </tr>
+
+                        <tr>
+                            <td>11:00 AM</td>
+                            <td>Physics</td>
+                            <td>103</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications">
+
+            <h3 class="section-title">Academic Notifications</h3>
+
+            <div class="alert alert-warning">
+                Mid-Term examination notification released.
+            </div>
+
+            <div class="alert alert-success">
+                Python assignment submission announced.
+            </div>
+
+            <div class="alert alert-danger">
+                Please check your pending fee reminders.
+            </div>
+
+        </section>
+
+        <!-- Carousel -->
+        <h3 class="section-title">University Updates</h3>
+
+        <div id="updateCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="p-5 text-center bg-primary text-white">
+                        <h3>Welcome to MRU</h3>
+                        <p>Explore your university dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="p-5 text-center bg-success text-white">
+                        <h3>Academic Updates</h3>
+                        <p>Stay updated with examination notices.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="p-5 text-center bg-dark text-white">
+                        <h3>Student Services</h3>
+                        <p>Access all student facilities.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#updateCarousel"
+            data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#updateCarousel"
+            data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+        <!-- Student Services -->
+        <h3 class="section-title">Student Services</h3>
+
+        <div class="row g-3">
+
+            <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h5>Library</h5>
+                    <p>Access learning materials.</p>
+                    <button class="btn btn-primary">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h5>Hostel</h5>
+                    <p>Hostel information.</p>
+                    <button class="btn btn-primary">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h5>Placements</h5>
+                    <p>Career opportunities.</p>
+                    <button class="btn btn-primary">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Malla Reddy University</p>
+        <p>Student Dashboard | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>
