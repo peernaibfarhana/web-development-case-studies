@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Services Homepage</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #00509d;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #0077b6, #48cae4);
+            color: white;
+            animation: fadeIn 2s;
+        }
+
+        .welcome h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* Services */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 25px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px
+            rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #00509d;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            background-color: #00509d;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .card a:hover {
+            background-color: #003366;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            .welcome h2 {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Malla Reddy University</h1>
+        <p>Student Services Homepage</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="home">
+        <h2>Welcome to Student Services</h2>
+        <p>Access all university services in one place.</p>
+    </section>
+
+    <!-- Services Section -->
+    <main class="container" id="services">
+
+        <h2>Our Student Services</h2>
+
+        <div class="services">
+
+            <!-- Library -->
+            <div class="card">
+                <h3>📚 Library</h3>
+                <p>Access books, journals and digital
+                learning resources.</p>
+                <a href="#">Explore</a>
+            </div>
+
+            <!-- Transport -->
+            <div class="card">
+                <h3>🚌 Transport</h3>
+                <p>Get information about bus routes
+                and transportation facilities.</p>
+                <a href="#">Explore</a>
+            </div>
+
+            <!-- Hostel -->
+            <div class="card">
+                <h3>🏠 Hostel</h3>
+                <p>Find hostel accommodation and
+                student facilities.</p>
+                <a href="#">Explore</a>
+            </div>
+
+            <!-- Placements -->
+            <div class="card">
+                <h3>💼 Placements</h3>
+                <p>Get placement updates, training
+                and career opportunities.</p>
+                <a href="#">Explore</a>
+            </div>
+
+            <!-- Examination -->
+            <div class="card">
+                <h3>📝 Examination</h3>
+                <p>Check examination schedules,
+                results and notifications.</p>
+                <a href="#">Explore</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- About Section -->
+    <section class="container" id="about">
+        <h2>About Us</h2>
+        <div class="card">
+            <p>
+                Malla Reddy University provides various
+                student services to make academic life
+                easier and more convenient.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container" id="contact">
+        <h2>Contact Us</h2>
+        <div class="card">
+            <p>Email: info@mallareddyuniversity.ac.in</p>
+            <p>Student Support: University Helpdesk</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Malla Reddy University</p>
+        <p>All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
