@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRU Student Helpdesk</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #00509d;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            ), url("campus.jpg");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 25px auto;
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #00509d;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00509d;
+        }
+
+        #message {
+            margin-top: 12px;
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            .hero {
+                padding: 50px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Malla Reddy University</h1>
+        <p>Student Helpdesk & Circular Portal</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#notices">Notices</a>
+        <a href="#links">Important Links</a>
+        <a href="#resources">Resources</a>
+        <a href="#enquiry">Enquiry</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <h2 style="color:white;">Welcome to Student Helpdesk</h2>
+        <p>Your one-stop destination for university updates and information.</p>
+    </section>
+
+    <main class="container">
+
+        <!-- Notices -->
+        <section class="card" id="notices">
+            <h2>Latest Notices & Circulars</h2>
+            <ul>
+                <li>Mid-Term Examination Schedule Released.</li>
+                <li>Last date for fee payment announced.</li>
+                <li>Technical Fest Registration Started.</li>
+                <li>Semester Examination Notification Released.</li>
+            </ul>
+        </section>
+
+        <!-- Important Links -->
+        <section class="card" id="links">
+            <h2>Important Links</h2>
+            <ul>
+                <li><a href="https://www.mallareddyuniversity.ac.in/"
+                target="_blank">University Website</a></li>
+
+                <li><a href="#enquiry">Student Enquiry</a></li>
+
+                <li><a href="#resources">Study Resources</a></li>
+            </ul>
+        </section>
+
+        <!-- Downloadable Resources -->
+        <section class="card" id="resources">
+            <h2>Downloadable Resources</h2>
+            <ul>
+                <li>
+                    <a href="circular.pdf" download>
+                        Download Academic Circular
+                    </a>
+                </li>
+
+                <li>
+                    <a href="timetable.pdf" download>
+                        Download Examination Timetable
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Student Enquiry Form -->
+        <section class="card" id="enquiry">
+            <h2>Student Enquiry Form</h2>
+
+            <form id="enquiryForm">
+
+                <div class="form-group">
+                    <label for="name">Student Name:</label>
+                    <input type="text" id="name"
+                    placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email"
+                    placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option>Computer Science</option>
+                        <option>Cybersecurity</option>
+                        <option>Electronics</option>
+                        <option>Mechanical</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="query">Your Enquiry:</label>
+                    <textarea id="query" rows="4"
+                    placeholder="Enter your question"
+                    required></textarea>
+                </div>
+
+                <button type="submit">Submit Enquiry</button>
+
+                <p id="message"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Malla Reddy University.
+        All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("enquiryForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+
+            document.getElementById("message").innerHTML =
+                "Thank you, " + name +
+                "! Your enquiry has been submitted successfully.";
+
+            document.getElementById("enquiryForm").reset();
+
+        });
+    </script>
+
+</body>
+</html>
