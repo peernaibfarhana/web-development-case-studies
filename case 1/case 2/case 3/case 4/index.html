@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Student Service Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            background-color: white;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #00509d;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            color: green;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Malla Reddy University</h1>
+        <p>Online Student Service Portal</p>
+    </header>
+
+    <!-- Main Form -->
+    <div class="container">
+
+        <h2>Student Service Application</h2>
+
+        <form id="serviceForm">
+
+            <label for="name">Student Name:</label>
+            <input type="text" id="name"
+            placeholder="Enter your name" required>
+
+            <label for="roll">Roll Number:</label>
+            <input type="text" id="roll"
+            placeholder="Enter your roll number" required>
+
+            <label for="department">Department:</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option>Cybersecurity</option>
+                <option>Computer Science</option>
+                <option>Electronics</option>
+                <option>Mechanical</option>
+            </select>
+
+            <label for="service">Select Service:</label>
+            <select id="service" required>
+                <option value="">Choose Service</option>
+                <option value="Leave Request">Leave Request</option>
+                <option value="Bonafide Certificate">Bonafide Certificate</option>
+                <option value="Course Registration">Course Registration</option>
+            </select>
+
+            <label for="date">Application Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="reason">Reason / Details:</label>
+            <textarea id="reason" rows="4"
+            placeholder="Enter your reason or details"
+            required></textarea>
+
+            <button type="submit">Submit Application</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Malla Reddy University</p>
+        <p>All Rights Reserved.</p>
+    </footer>
+
+    <script>
+
+        // Array to store student applications
+        let applications = [];
+
+        // Form submission event
+        document.getElementById("serviceForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            // Get form values
+            let name = document.getElementById("name").value.trim();
+            let roll = document.getElementById("roll").value.trim();
+            let department = document.getElementById("department").value;
+            let service = document.getElementById("service").value;
+            let date = document.getElementById("date").value;
+            let reason = document.getElementById("reason").value.trim();
+
+            // Form validation
+            if (!name || !roll || !department ||
+                !service || !date || !reason) {
+
+                alert("Please fill all the fields.");
+                return;
+            }
+
+            // Create application object
+            let application = {
+                name: name,
+                roll: roll,
+                department: department,
+                service: service,
+                date: date,
+                reason: reason
+            };
+
+            // Store application in array
+            applications.push(application);
+
+            // Display result
+            document.getElementById("result").innerHTML =
+                "<h3>Application Submitted Successfully!</h3>" +
+                "<p><b>Name:</b> " + name + "</p>" +
+                "<p><b>Roll Number:</b> " + roll + "</p>" +
+                "<p><b>Department:</b> " + department + "</p>" +
+                "<p><b>Service:</b> " + service + "</p>" +
+                "<p><b>Date:</b> " + date + "</p>" +
+                "<p><b>Reason:</b> " + reason + "</p>" +
+                "<p><b>Total Applications:</b> " +
+                applications.length + "</p>";
+
+            // Clear form
+            document.getElementById("serviceForm").reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
